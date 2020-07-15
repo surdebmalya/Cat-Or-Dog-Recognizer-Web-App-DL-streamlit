@@ -17,4 +17,5 @@ The model architechture is given below:
 ![CNN Model Architechture](model_arch.png)
 # Conclusion
 I have tried to deploy it on heroku, but it exceeds the slug size! I am looking for an alternative way to depoly the whole work, if I get success, then I will put the link on this readme.md file!
+
 Thank you!
