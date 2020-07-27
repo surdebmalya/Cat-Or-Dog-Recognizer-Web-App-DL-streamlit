@@ -1,5 +1,6 @@
 streamlit
 Pillow==6.2.2
-keras
+keras==2.3.1
+tensorflow==2.1.0
 numpy
 pytest-shutil
