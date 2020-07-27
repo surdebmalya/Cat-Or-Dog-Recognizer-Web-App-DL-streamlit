@@ -1,6 +1,5 @@
 streamlit
 Pillow==6.2.2
-tensorflow.keras.preprocessing.image
-tensorflow.keras.models
+keras
 numpy
 pytest-shutil
