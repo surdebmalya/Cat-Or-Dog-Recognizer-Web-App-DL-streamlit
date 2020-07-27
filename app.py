@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
-from keras.preprocessing.image import load_img, img_to_array, save_img
-from keras.models import model_from_json
+from tensorflow.keras.preprocessing.image import load_img, img_to_array, save_img
+from tensorflow.keras.models import model_from_json
 import numpy as np
 import shutil
 
