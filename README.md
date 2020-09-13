@@ -1,5 +1,5 @@
 # Cat-Or-Dog-Recognizer-Web-App-DL-streamlit
-It's my first try for a full stack development! For front end I have used streamlit. Please click the gist icon below to see the model code.
+It's my first try for a full stack development! For front end I have used streamlit. Please click the **gist icon** below to see the model code.
 
 [![Git Link](https://i.ibb.co/dWMFSds/icon.png)](https://gist.github.com/surdebmalya/e9fb589e4e67da6a8872776c713e090b)
 # Introduction
