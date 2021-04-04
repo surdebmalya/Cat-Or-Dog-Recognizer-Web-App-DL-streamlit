@@ -16,8 +16,8 @@ Cat 🐱 Or Dog 🐶 Recognizer
 
 #================================= Title Image ===========================
 st.text("""""")
-img_path_list = ["static\\image_1.jpg",
-				"static\\image_2.jpg"]
+img_path_list = ["static/image_1.jpg",
+				"static/image_2.jpg"]
 index = random.choice([0,1])
 image = Image.open(img_path_list[index])
 st.image(
