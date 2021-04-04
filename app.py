@@ -62,49 +62,6 @@ st.write("""
 Well, it can predict wheather the image you have uploaded is the image of a Cat 🐈 or a Dog 🐕!
 	""")
 
-#============================== Sample Images For Testing ==================
-st.write("""
-## 4️⃣  Download Some Images For Testing!!!
-	""")
-st.write("""
-Hey there! here is some images of Cats & Dogs!
-- Here you can find a total of 10 images **[**5 for each category**]**
-- Just click on **⬇️ Download** button & download those images!!!
-- You can also try your own images!!!
-	""")
-
-#============================= Download Button =============================
-st.text("""""")
-download = st.button("⬇️ Download")
-
-#============================ Download Clicked =============================
-if download:
-	link = "https://drive.google.com/drive/folders/1i_ukZQxJsCWq2WpISwNa5HFD8smxNdee?usp=sharing"
-	try:
-		webbrowser.open(link)
-	except:
-		st.write("""
-    		⭕ Something Went Wrong!!! Please Try Again Later!!!
-    		""")
-
-#============================ Behind The Scene ==========================
-st.write("""
-## 5️⃣ Behind The Scene
-	""")
-st.write("""
-To see how it works, please click the button below!
-	""")
-st.text("""""")
-github = st.button("👉🏼 Click Here To See How It Works")
-if github:
-	github_link = "https://github.com/surdebmalya/Cat-Or-Dog-Recognizer-Web-App-DL-streamlit"
-	try:
-		webbrowser.open(github_link)
-	except:
-		st.write("""
-    		⭕ Something Went Wrong!!! Please Try Again Later!!!
-    		""")
-
 #======================== Time To See The Magic ===========================
 st.write("""
 ## 👁️‍🗨️ Time To See The Magic 🌀
@@ -166,31 +123,15 @@ def generate_result(prediction):
 #=========================== Predict Button Clicked ==========================
 if submit:
 	try:
-		# Creating Directory
-		not_created = True
-		while not_created:
-			name_of_directory = random.choice(list(range(0, 1885211)))
-			try:
-				ROOT_DIR = os.path.abspath(os.curdir)
-				if str(name_of_directory) not in os.listdir(ROOT_DIR):
-					not_created = False
-					path = ROOT_DIR + "\\" + str(name_of_directory)
-					os.mkdir(path)
-					# directory made!
-			except:
-				st.write("""
-					### ❗ Oops!!! Seems like it will not support in you OS!!!
-					""")
-
 		# save image on that directory
-		save_img(path+"\\test_image.png", img_array)
+		save_img("temp_dir/test_image.png", img_array)
 
-		image_path = path+"\\test_image.png"
+		image_path = "temp_dir/test_image.png"
 		# Predicting
 		st.write("👁️ Predicting...")
 
-		model_path_h5 = "model\\model.h5"
-		model_path_json = "model\\model.json"
+		model_path_h5 = "model/model.h5"
+		model_path_json = "model/model.json"
 		json_file = open(model_path_json, 'r')
 		loaded_model_json = json_file.read()
 		json_file.close()
@@ -201,18 +142,11 @@ if submit:
 
 		prediction = processing(image_path)
 
-		# Delete the folder
-		dir_path = path
-		try:
-		    shutil.rmtree(dir_path)
-		except:
-			pass
-
 		generate_result(prediction)
 
 	except:
 		st.write("""
-		### ❗ Please Select A Picture First!
+		### ❗ Oops... Something Is Going Wrong
 			""")
 
 #=============================== Copy Right ==============================
